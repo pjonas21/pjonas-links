@@ -82,11 +82,16 @@ body * {
     transform: translateY(-50%);
 
     transition: background .2s;
+
+    animation: slideSwitch-back 0.4s;
+}
+
+#switch button:hover {
+    outline: 8px solid var(--social-link-hover);
 }
 
 .light #switch button {
-    right: 0;
-    left: initial;
+    animation: slideSwitch-in 0.4s forwards;
 }
 
 #switch span {
@@ -186,6 +191,22 @@ footer p,a {
     }
 }
 
+/* animations */
+@keyframes slideSwitch-in {
+    from {
+        left: 0;
+    }
+    to {
+        left: 50%;
+    }
+}
 
-
+@keyframes slideSwitch-back {
+    from {
+        left: 50%;
+    }
+    to {
+        left: 0;
+    }
+}
 
